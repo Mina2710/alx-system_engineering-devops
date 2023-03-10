@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod +x change-owner-hello.sh
+chown --from=guillaume betty hello
