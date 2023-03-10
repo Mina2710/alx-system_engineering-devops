@@ -1,8 +1,2 @@
 #!/bin/bash
-
-# Check if the file "hello" is owned by the user "guillaume"
 if [ $(stat -c '%U' ./hello) = "guillaume" ]
-then
-    # Change the owner of the file "hello" to "betty"
-        chown betty ./hello
-	fi
