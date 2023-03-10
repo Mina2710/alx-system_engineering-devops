@@ -1,2 +1,2 @@
 #!/bin/bash
-telnet towel.blinkenlights.nl | tac | tac | GREP_COLOR="1;32" grep --color -E '^.{0,17}(A (N|n)ew (H|h)ope|. Episode IV.+)' && reset
+telnet towel.blinkenlights.nl
