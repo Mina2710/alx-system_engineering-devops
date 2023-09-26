@@ -1,9 +1,6 @@
 # Web server
 
-In this project, I learned how web servers work and began using one. I was
-provided a personal server by ALX. I learned how to use `scp`
-and Fabric to transfer files to my server. Additionally, I completed a basic
-configuration of the server using Nginx.
+In this project, I gained knowledge about the functioning of web servers and started utilizing one. ALX provided me with a dedicated server. During the project, I acquired the skills to employ 'scp' and Fabric for the purpose of transferring files to my server. Furthermore, I successfully executed a fundamental configuration setup for the server utilizing Nginx
 
 The server is accessible at [bdbnb.site](http://bdbnb.site).
 
