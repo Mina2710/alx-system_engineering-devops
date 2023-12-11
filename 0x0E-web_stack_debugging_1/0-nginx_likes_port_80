@@ -1,10 +1,22 @@
-#!/usr/bin/env bash                                                                                                                                       
-# fix nginx listening on port 80                                                                                                                          
-# Go to sites-enabled folder for Nginx                                                                                                                    
-cd /etc/nginx/sites-enabled/ || exit;                                                                                                                             
-# Delete the default file                                                                                                                               
-rm default;                                                                                                                                               
-# Create symbolic link to the deafult file in sites-available                                                                                             
-ln -s /etc/nginx/sites-available/default default;                                                                                                         
-# Restart Nginx                                                                                                                                           
-service nginx restart 
+#!/bin/bash
+
+# Install Nginx (if not already installed)
+apt-get update
+apt-get install -y nginx
+
+# Check if Nginx service is running
+if ! systemctl is-active --quiet nginx; then
+    systemctl start nginx
+fi
+
+# Modify Nginx configuration to listen on port 80
+nginx_config="/etc/nginx/sites-available/default"
+sed -i 's/^\s*listen\s*\(.*\);$/\tlisten 80;/g' "$nginx_config"
+
+# Restart Nginx to apply changes
+systemctl restart nginx
+
+# Verify Nginx is listening on port 80
+netstat -tuln | grep ':80'
+
+echo "Nginx configured to listen on port 80 successfully."
